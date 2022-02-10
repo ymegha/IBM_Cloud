@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="customer" class="org.example.Customer" >
+        <constructor-arg name="address" ref="address"/>
+        <property name="customerId" value="1000"/>
+        <property name="customerName" value="Ram"/>
+        <property name="customerEmail" value="ram@g.com"/>
+
+
+    </bean>
+    <bean name="address" class="org.example.Address">
+        <constructor-arg name="addressLine1" value="Haryana"/>
+        <constructor-arg name="addressLine2" value="India"/>
+        <constructor-arg name="city" value="Gurgaon"/>
+    </bean>
+    <bean name="theCoach" class="org.example.BaseBallCoach">
+        <constructor-arg name="fortuneService" ref="fortuneService"/>
+    </bean>
+    <bean name="fortuneService" class="org.example.HappyFortuneService">
+
+    </bean>
+</beans>
